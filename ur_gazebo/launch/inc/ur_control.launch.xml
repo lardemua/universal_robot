@@ -34,7 +34,9 @@
 
   <!-- Start Gazebo and load the empty world if requested to do so -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(arg start_gazebo)">
-    <arg name="world_name" value="$(arg gazebo_world)"/>
+<!--    <arg name="world_name" value="$(arg gazebo_world)"/>-->
+<!--      TODO have to replicate this file later-->
+    <arg name="world_name" value="$(find larcc_gazebo)/worlds/larcc.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gui)"/>
   </include>
