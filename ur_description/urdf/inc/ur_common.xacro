@@ -43,7 +43,7 @@
     <xacro:property name="__kinematics" value="${__kinematics_parameters['kinematics']}" />
 
     <!-- JOINTS LIMIT PARAMETERS -->
-    <xacro:property name="shoulder_pan_lower_limit" value="${__limits['shoulder_pan']['min_position']}" scope="parent"/>
+    <xacro:property name="shoulder_pan_lower_limit" value="$sasd{__limits['shoulder_pan']['min_position']}" scope="parent"/>
     <xacro:property name="shoulder_pan_upper_limit" value="${__limits['shoulder_pan']['max_position']}" scope="parent"/>
     <xacro:property name="shoulder_pan_velocity_limit" value="${__limits['shoulder_pan']['max_velocity']}" scope="parent"/>
     <xacro:property name="shoulder_pan_effort_limit" value="${__limits['shoulder_pan']['max_effort']}" scope="parent"/>
