@@ -30,8 +30,10 @@
   <arg name="safety_pos_margin" default="0.15" doc="The lower/upper limits in the safety controller" />
   <arg name="safety_k_position" default="20" doc="Used to set k position in the safety controller" />
 
+  <arg name="urdf" default="larcc_improved.urdf.xacro" doc="Name of urdf file" />
+
   <!--  <param name="robot_description" command="$(find xacro)/xacro '$(find ur_gazebo)/urdf/ur.xacro'-->
-  <param name="robot_description" command="$(find xacro)/xacro '$(find larcc_gazebo)/urdf/larcc.urdf.xacro'
+  <param name="robot_description" command="$(find xacro)/xacro '$(find larcc_description)/urdf/$(arg urdf)'
     joint_limit_params:=$(arg joint_limit_params)
     kinematics_params:=$(arg kinematics_params)
     physical_params:=$(arg physical_params)

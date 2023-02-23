@@ -49,6 +49,8 @@
   <!-- Gazebo parameters -->
   <arg name="paused" default="true" doc="Starts Gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts Gazebo gui" />
+  <arg name="world" default="larcc" doc="Defines world file to be used" />
+  <arg name="urdf" default="larcc_improved.urdf.xacro" doc="Name of urdf file" />
 
   <!-- Load urdf on the parameter server -->
   <include file="$(arg robot_description_file)">
@@ -56,6 +58,7 @@
     <arg name="kinematics_params" value="$(arg kinematics_params)"/>
     <arg name="physical_params" value="$(arg physical_params)"/>
     <arg name="visual_params" value="$(arg visual_params)"/>
+    <arg name="urdf" value="$(arg urdf)"/>
   </include>
 
   <!-- Robot state publisher -->
@@ -69,6 +72,7 @@
     <arg name="controller_config_file" value="$(arg controller_config_file)"/>
     <arg name="controllers" value="$(arg controllers)"/>
     <arg name="gui" value="$(arg gui)"/>
+    <arg name="world" value="$(arg world)"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="stopped_controllers" value="$(arg stopped_controllers)"/>
   </include>

@@ -26,6 +26,7 @@
     <arg name="gui" default="true" doc="If true, Gazebo UI is started. If false, only start Gazebo server."/>
     <arg name="paused" default="true"
          doc="If true, start Gazebo in paused mode. If false, start simulation as soon as Gazebo has loaded."/>
+    <arg name="world" default="larcc" doc="Defines world file to be used" />
     <arg name="robot_description_param_name" default="robot_description"
          doc="Name of the parameter which contains the robot description (ie: URDF) which should be spawned into Gazebo."/>
     <arg name="spawn_z" default="0.0"
@@ -40,7 +41,7 @@
     <include file="$(find gazebo_ros)/launch/empty_world.launch" if="$(arg start_gazebo)">
         <!--    <arg name="world_name" value="$(arg gazebo_world)"/>-->
         <!--      TODO have to replicate this file later-->
-        <arg name="world_name" value="$(find larcc_gazebo)/worlds/larcc.world"/>
+        <arg name="world_name" value="$(find larcc_gazebo)/worlds/$(arg world).world"/>
         <arg name="paused" value="$(arg paused)"/>
         <arg name="gui" value="$(arg gui)"/>
     </include>
